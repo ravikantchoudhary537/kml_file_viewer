@@ -48,14 +48,14 @@ const App = () => {
 
         <div className="flex justify-center gap-4 mb-4">
           <button
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+            className="bg-blue-500 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-blue-600"
             onClick={() => setShowSummary(!showSummary)}
           >
             {showSummary ? "Hide Summary" : "Show Summary"}
           </button>
 
           <button
-            className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+            className="bg-green-500 cursor-pointer text-white px-4 py-2 rounded-lg hover:bg-green-600"
             onClick={() => setShowDetailed(!showDetailed)}
           >
             {showDetailed ? "Hide Detailed" : "Show Detailed"}
@@ -63,10 +63,7 @@ const App = () => {
         </div>
 
         <div className="flex gap-2 justify-evenly items-center">
-          {/* Summary Table */}
           {showSummary && <SummaryTable data={kmlData} />}
-
-          {/* Detailed Table */}
           {showDetailed && <DetailsTable data={kmlData} />}
         </div>
         <MapView kmlData={kmlData} />

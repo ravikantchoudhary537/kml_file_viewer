@@ -34,7 +34,7 @@ export const parseKML = (kmlString) => {
             if (rawCoords) {
               const coordPairs = rawCoords.split(/\s+/).map((coord) => {
                 const [lon, lat] = coord.split(",").map(Number);
-                return [lat, lon]; // Leaflet format
+                return [lat, lon];
               });
 
               lineLengths[type] += coordPairs.length - 1;
@@ -48,7 +48,7 @@ export const parseKML = (kmlString) => {
             if (rawCoords) {
               const coordPairs = rawCoords.split(/\s+/).map((coord) => {
                 const [lon, lat] = coord.split(",").map(Number);
-                return [lat, lon]; // Leaflet format
+                return [lat, lon]; 
               });
 
               coordinates.polygons.push(coordPairs);

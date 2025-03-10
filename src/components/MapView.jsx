@@ -15,18 +15,14 @@ const MapView = ({ kmlData }) => {
         className="h-[400px] w-full border border-gray-300 rounded-lg"
       >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-
-        {/* Render Points */}
         {kmlData.coordinates.points.map((point, index) => (
           <Marker key={index} position={point} />
         ))}
-
-        {/* Render LineStrings */}
+            
         {kmlData.coordinates.lines.map((path, index) => (
           <Polyline key={index} positions={path} color="blue" />
         ))}
 
-        {/* Render Polygons */}
         {kmlData.coordinates.polygons.map((polygon, index) => (
           <Polygon key={index} positions={polygon} color="red" />
         ))}
